@@ -1,0 +1,16 @@
+[
+{
+  "modid": "Modular",
+  "name": "Modular",
+  "description": "A mod were everything is, wait for it, modular!",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Penagwin"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
