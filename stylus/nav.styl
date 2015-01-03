@@ -1,0 +1,22 @@
+.nav
+	text-align left
+	background-color dark
+	margin 10px
+	border-radius 4px
+	overflow auto
+	color-me-background(colors.dark)
+	
+	li
+		text-decoration none
+		display inline-block
+		line-height 20px
+		height inherit
+		padding 10px
+		
+		color white
+		color-me-background-hover(colors.dark)
+	for pair in colors
+		&.{pair}
+			color-me-background(colors[pair])
+			li
+				color-me-background-hover(colors[pair])

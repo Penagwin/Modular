@@ -1,0 +1,26 @@
+
+color-me-input(color)
+	box-shadow: 0px 0px 3px color
+	border-color  color
+button, .button
+	font-size 1.00em
+	margin 10
+	padding 8
+	color-me(#3498db)
+	border-radius 7px
+	color white
+	font-weight heavy
+	for pair in colors
+		&.{pair}
+			color-me(colors[pair])
+input
+	border-color #ccc
+	border-style solid
+	border-radius 5px
+	padding 5px
+	margin 10
+	for pair in colors
+		&.{pair}:focus
+			color-me-input(colors[pair])
+	&:focus
+		color-me-input(#3498db)

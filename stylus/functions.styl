@@ -1,0 +1,26 @@
+box-shadow(args...)
+ 	-webkit-box-shadow args
+   	-moz-box-shadow args
+  	box-shadow args
+  	
+color-me(color)
+	background-color color
+	box-shadow inset 0px -2px darken(color, 10)
+	border 1px solid darken(color, 10)
+	&:hover
+		background-color lighten(color, 7)
+		box-shadow inset 0px -2px darken(color, 2)
+		border 1px solid darken(color, 2)
+		cursor: pointer
+		cursor: hand
+color-me-background-hover(color)
+	background-color color
+	//box-shadow inset 0px -2px darken(color, 10)
+	&:hover
+		background-color lighten(color, 7)
+		//box-shadow inset 0px -2px darken(color, 2)
+		cursor: pointer
+		cursor: hand
+color-me-background(color)
+	background-color color
+	//box-shadow inset 0px -2px darken(color, 10)
