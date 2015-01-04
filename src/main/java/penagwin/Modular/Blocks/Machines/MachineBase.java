@@ -52,7 +52,10 @@ public class MachineBase extends Block {
 
     }
 
+    public ArrayList getBlockOnSide(IBlockAccess world, int x, int y, int z, int side){
 
+        return null;
+    }
 
 
 

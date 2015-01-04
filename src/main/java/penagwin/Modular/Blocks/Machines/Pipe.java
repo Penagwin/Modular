@@ -33,10 +33,15 @@ public class Pipe extends MachineBase {
 
     @Override
     public void onNeighborBlockChange(World world, int x, int y, int z, Block block){
-        Block bblock = world.getBlock(x - 2, y, z);
-        if(bblock instanceof Pipe){
-            System.out.println(bblock.getUnlocalizedName());
-            this.ye = true;
+        System.out.println(" X: " + x + ", Y: " + y + ", Z: " + z);
+        if(block.equals(this)) {
+            System.out.println("Equals");
+
+            Block bblock = world.getBlock(x - 2, y, z);
+            if (bblock instanceof Pipe) {
+                System.out.println(bblock.getUnlocalizedName());
+                ((Pipe)(block)).ye = true;
+            }
         }
 
     }
