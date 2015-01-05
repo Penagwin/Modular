@@ -1,12 +1,16 @@
+branches:
+  except:
+    - gh-pages
+
 language: java
 jdk:
   - oraclejdk7
-  - openjdk7
 
 before_install:
  - chmod +x gradlew
+ - VERSION=$(($VERSION + 1))
 
 install: ./gradlew setupCIWorkspace -S
 script: ./gradlew build -S
-after_success:
-    "curl --ftp-create-dirs -T ./build/libs/modid-1.0-universal.jar -u $FTP_USER:$FTP_PASSWORD ftp://penagw.in/modid-1.0-universal.jar"
+after_success:$
+    "for i in build/libs/* ; do curl --ftp-create-dirs -T $i -u $USER:$PWD ftp://penagw.in/../../var/www/files/ModularBuilds/$(echo $VERSION)/${i##*/} ; done"
