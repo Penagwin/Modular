@@ -12,5 +12,5 @@ before_install:
 
 install: ./gradlew setupCIWorkspace -S
 script: ./gradlew build -S
-after_success:$
+after_success:
     "for i in build/libs/* ; do curl --ftp-create-dirs -T $i -u $USER:$PWD ftp://penagw.in/../../var/www/files/ModularBuilds/$(echo $VERSION)/${i##*/} ; done"
